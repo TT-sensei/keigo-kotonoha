@@ -30,6 +30,9 @@
         <button class="mode-card mode-judge" type="button" data-start-mode="judge">
           <span class="mode-icon" aria-hidden="true">○×</span><span class="mode-copy"><strong>敬語ジャッジ</strong><small>この敬語、正しい？ 間違い？</small></span><span class="mode-arrow" aria-hidden="true">→</span>
         </button>
+        <button class="mode-card mode-guide" type="button" data-show-screen="guide">
+          <span class="mode-icon" aria-hidden="true">📖</span><span class="mode-copy"><strong>敬語の手引き</strong><small>種類と使い分けを見返そう</small></span><span class="mode-arrow" aria-hidden="true">→</span>
+        </button>
       </div>
       <div class="home-footer">
         <p>1セット 10問　·　まちがえた問題は、次回少し出やすくなります。</p>
@@ -52,7 +55,7 @@
         </div>
         <div id="answer-area" class="answer-area" aria-label="答えを選ぶ"></div>
         <section id="feedback-panel" class="feedback-panel" hidden aria-labelledby="feedback-title">
-          <div id="feedback-mark" class="feedback-mark" aria-hidden="true"></div>
+          <div id="feedback-mark" class="feedback-mark" aria-hidden="true"><img id="feedback-mark-image" src="" alt="" width="78" height="78"></div>
           <div class="feedback-copy"><h3 id="feedback-title"></h3><p id="feedback-answer" class="feedback-answer"></p><p id="feedback-explanation"></p></div>
           <img id="feedback-character" class="feedback-character" src="" alt="" width="104" height="104">
           <button id="next-button" class="next-button" type="button">次へ <span aria-hidden="true">→</span></button>
@@ -68,6 +71,12 @@
       </header>
       <section class="guide-intro">
         <p class="guide-rule">まずは、<strong>だれの動作か</strong>をたしかめよう。</p>
+        <div class="guide-characters" aria-label="敬語を学ぶナビキャラ">
+          <figure><img src="https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/riku/fullbody/pointing.webp" alt="ポイントを指さすりく" width="112" height="112"><figcaption>だれの動作？</figcaption></figure>
+          <figure><img src="https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/kai/fullbody/reading.webp" alt="ノートを読むかい" width="112" height="112"><figcaption>早見表で確認</figcaption></figure>
+          <figure><img src="https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/saku/fullbody/reading.webp" alt="本を読むさく" width="112" height="112"><figcaption>声に出してみよう</figcaption></figure>
+          <figure><img src="https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/nami/fullbody/reading.webp" alt="勉強するなみ" width="112" height="112"><figcaption>もう一度チャレンジ</figcaption></figure>
+        </div>
         <div class="type-grid">
           <article class="type-card type-respect"><h3>尊敬語</h3><p>相手や話題の人の動作を高める言い方。</p><small>先生が <b>いらっしゃる</b></small></article>
           <article class="type-card type-humble"><h3>謙譲語</h3><p>自分側の動作をへりくだって、相手への敬意を表す。</p><small>私が <b>伺う</b></small></article>
@@ -101,6 +110,6 @@
       </div>
     </section>
   </main>
-  <script type="module" src="./js/app.js?v=842e204"></script>
+  <script type="module" src="./js/app.js?v=50navi20260827"></script>
 </body>
 </html>

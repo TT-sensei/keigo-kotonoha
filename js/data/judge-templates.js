@@ -120,8 +120,8 @@ export const JUDGE_TEMPLATES = [
     { id: 'judge-borrow-self-wrong', category: '謙譲語', scene: '雨の日の傘', sentence: '私は先生の傘をお貸しになりました。', answer: false, explanation: '「お貸しになる」は相手を高める尊敬語です。自分が借りるときは「拝借しました」を使います。' }
   ]},
   { id: 'judge-polite', label: '聞き手にていねいに伝える場面', variants: [
-    { id: 'judge-polite-library-correct', category: '丁寧語', scene: '友だちに予定を伝える場面', sentence: '私は明日、図書室へ行きます。', answer: true, explanation: '「行きます」は聞き手にていねいに伝える丁寧語です。' },
-    { id: 'judge-polite-library-wrong', category: '丁寧語', scene: '友だちに予定を伝える場面', sentence: '私は明日、図書室へ行く。', answer: false, explanation: 'この場面では、丁寧語の「行きます」と言うと、聞き手にていねいです。' }
+    { id: 'judge-polite-library-correct', category: '丁寧語', scene: '先生に予定を伝える場面', sentence: '私は明日、図書室へ行きます。', answer: true, explanation: '「行きます」は聞き手にていねいに伝える丁寧語です。' },
+    { id: 'judge-polite-library-wrong', category: '丁寧語', scene: '先生に予定を伝える場面', sentence: '私は明日、図書室へ行く。', answer: false, explanation: '先生に伝える場面では、丁寧語の「行きます」と言うと、聞き手にていねいです。' }
   ]},
   { id: 'judge-o-suru', label: '自分がていねいに動く場面', variants: [
     { id: 'judge-o-suru-hand-correct', category: 'お〜する', scene: '先生へ資料を渡す場面', sentence: '私が資料をお渡しします。', answer: true, explanation: '自分が渡すので、「お〜する」の形で正しくへりくだっています。' },

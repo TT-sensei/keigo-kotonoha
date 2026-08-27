@@ -8,9 +8,9 @@ import {
   ComboManager,
   StorageManager
 } from 'https://tt-sensei.github.io/edu-components/index.js';
-import { REFERENCE_ROWS } from './data/keigo-base.js?v=50navi20260827c';
-import { SELECT_QUESTIONS } from './data/select-templates.js?v=50navi20260827c';
-import { JUDGE_QUESTIONS } from './data/judge-templates.js?v=50navi20260827c';
+import { REFERENCE_ROWS } from './data/keigo-base.js?v=50navi20260827e';
+import { SELECT_QUESTIONS } from './data/select-templates.js?v=50navi20260827e';
+import { JUDGE_QUESTIONS } from './data/judge-templates.js?v=50navi20260827e';
 
 const ROUND_SIZE = 10;
 const STORE_KEY = 'learning-state';

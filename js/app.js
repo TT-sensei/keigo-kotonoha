@@ -15,10 +15,14 @@ import { JUDGE_QUESTIONS } from './data/judge-templates.js';
 const ROUND_SIZE = 10;
 const STORE_KEY = 'learning-state';
 const MODE_LABELS = { select: '敬語セレクト', judge: '敬語ジャッジ' };
-const NAVI_IMAGES = {
-  correct: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/kai/fullbody/correct.webp',
-  retry: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/kai/fullbody/retry.webp'
-};
+const NAVI_CHARACTERS = [
+  { id: 'riku', name: 'りく', correct: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/riku/fullbody/correct.webp', retry: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/riku/fullbody/retry.webp' },
+  { id: 'sora', name: 'そら', correct: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/sora/fullbody/correct.webp', retry: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/sora/fullbody/retry.webp' },
+  { id: 'kai', name: 'かい', correct: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/kai/fullbody/correct.webp', retry: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/kai/fullbody/retry.webp' },
+  { id: 'saku', name: 'さく', correct: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/saku/fullbody/correct.webp', retry: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/saku/fullbody/retry.webp' },
+  { id: 'tsuki', name: 'つき', correct: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/tsuki/fullbody/correct.webp', retry: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/tsuki/fullbody/retry.webp' },
+  { id: 'nami', name: 'なみ', correct: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/nami/fullbody/correct.webp', retry: 'https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/nami/fullbody/retry.webp' }
+];
 
 const dom = {
   home: document.querySelector('#home-screen'),
@@ -37,6 +41,7 @@ const dom = {
   answerArea: document.querySelector('#answer-area'),
   feedbackPanel: document.querySelector('#feedback-panel'),
   feedbackMark: document.querySelector('#feedback-mark'),
+  feedbackMarkImage: document.querySelector('#feedback-mark-image'),
   feedbackTitle: document.querySelector('#feedback-title'),
   feedbackAnswer: document.querySelector('#feedback-answer'),
   feedbackExplanation: document.querySelector('#feedback-explanation'),
@@ -263,16 +268,24 @@ function replayEffect(element, effectClass) {
   element.classList.add(effectClass);
 }
 
+function pickNavi(excludeId) {
+  const candidates = excludeId ? NAVI_CHARACTERS.filter(function (character) { return character.id !== excludeId; }) : NAVI_CHARACTERS;
+  return candidates[Math.floor(Math.random() * candidates.length)];
+}
+
 function showFeedback(question, isCorrect, combo) {
+  const primary = pickNavi();
+  const secondary = pickNavi(primary.id);
   dom.answerArea.classList.add('is-answered');
   dom.feedbackPanel.hidden = false;
   dom.feedbackPanel.classList.toggle('is-wrong', !isCorrect);
-  dom.feedbackMark.textContent = isCorrect ? '○' : '×';
+  dom.feedbackMarkImage.src = isCorrect ? primary.correct : primary.retry;
+  dom.feedbackMarkImage.alt = isCorrect ? primary.name + 'の正解ポーズ' : primary.name + 'の応援ポーズ';
   dom.feedbackTitle.textContent = isCorrect ? '正解！' : 'おしい！';
   dom.feedbackAnswer.textContent = isCorrect ? comboMessage(combo) : '答え：' + answerLabel(question);
   dom.feedbackExplanation.textContent = question.explanation;
-  dom.feedbackCharacter.src = isCorrect ? NAVI_IMAGES.correct : NAVI_IMAGES.retry;
-  dom.feedbackCharacter.alt = isCorrect ? 'うなずくかい' : 'もう一度と励ますかい';
+  dom.feedbackCharacter.src = isCorrect ? secondary.correct : secondary.retry;
+  dom.feedbackCharacter.alt = isCorrect ? secondary.name + 'の正解ポーズ' : secondary.name + 'の応援ポーズ';
   replayEffect(dom.feedbackPanel, isCorrect ? 'effect-correct-pop' : 'effect-wrong-wobble');
   dom.comboCount.textContent = '🔥 ' + String(session.combo.getCurrent()) + ' COMBO';
   dom.nextButton.focus({ preventScroll: true });

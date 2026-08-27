@@ -32,8 +32,8 @@ export const JUDGE_TEMPLATES = [
     { id: 'judge-eat-guest-wrong', category: '尊敬語', scene: '会食の場面', sentence: 'お客様がケーキをいただきました。', answer: false, explanation: '「いただく」は自分側に使う謙譲語です。お客様なら「召し上がりました」です。' }
   ]},
   { id: 'judge-eat-self', label: '食べる人はだれ？(自分)', variants: [
-    { id: 'judge-eat-self-correct', category: '謙譲語', scene: '先生にもらったお菓子', sentence: '私はいただいたお菓子をいただきました。', answer: true, explanation: '自分が食べるので、謙譲語の「いただく」で正しいです。' },
-    { id: 'judge-eat-self-wrong', category: '謙譲語', scene: '先生にもらったお菓子', sentence: '私はいただいたお菓子を召し上がりました。', answer: false, explanation: '「召し上がる」は相手を高める尊敬語です。自分には「いただきました」を使います。' }
+    { id: 'judge-eat-self-correct', category: '謙譲語', scene: '先生にもらったお菓子', sentence: '私は先生にいただいたお菓子をいただきました。', answer: true, explanation: '自分が食べるので、謙譲語の「いただく」で正しいです。' },
+    { id: 'judge-eat-self-wrong', category: '謙譲語', scene: '先生にもらったお菓子', sentence: '私は先生にいただいたお菓子を召し上がりました。', answer: false, explanation: '「召し上がる」は相手を高める尊敬語です。自分には「いただきました」を使います。' }
   ]},
   { id: 'judge-do-teacher', label: 'する人はだれ？(先生)', variants: [
     { id: 'judge-do-teacher-correct', category: '尊敬語', scene: '朝の準備', sentence: '先生が朝の準備をなさいました。', answer: true, explanation: '先生がするので、尊敬語の「なさる」で正しいです。' },
@@ -88,8 +88,8 @@ export const JUDGE_TEMPLATES = [
     { id: 'judge-ask-self-wrong', category: '謙譲語', scene: '職員室へ電話をかける', sentence: '私は職員室に電話して、先生に集合時刻をお尋ねになりました。', answer: false, explanation: '「お尋ねになる」は相手を高める尊敬語です。自分には「伺いました」を使います。' }
   ]},
   { id: 'judge-show-self', label: '見せる人はだれ？(自分)', variants: [
-    { id: 'judge-show-self-correct', category: '謙譲語', scene: '作品を見せる場面', sentence: '私が作品をご覧に入れました。', answer: true, explanation: '自分が見せるので、謙譲語の「ご覧に入れる」で正しいです。' },
-    { id: 'judge-show-self-wrong', category: '謙譲語', scene: '作品を見せる場面', sentence: '私が作品をご覧になりました。', answer: false, explanation: '「ご覧になる」は相手を高める尊敬語です。自分が見せるときは「ご覧に入れました」を使います。' }
+    { id: 'judge-show-self-correct', category: '謙譲語', scene: '作品を見せる場面', sentence: '私が先生に作品をお見せしました。', answer: true, explanation: '自分が先生に見せる動作なので、「お〜する」の形の謙譲語「お見せする」で正しいです。' },
+    { id: 'judge-show-self-wrong', category: '謙譲語', scene: '作品を見せる場面', sentence: '私が先生に作品をご覧になりました。', answer: false, explanation: '「ご覧になる」は相手を高める尊敬語です。自分が見せるときは「お見せしました」を使います。' }
   ]},
   { id: 'judge-wear-guest', label: '着る人はだれ？(来賓)', variants: [
     { id: 'judge-wear-guest-correct', category: '尊敬語', scene: '式典の来賓', sentence: '来賓の方がすてきな服をお召しになっていました。', answer: true, explanation: '来賓の方が着るので、尊敬語の「お召しになる」で正しいです。' },
@@ -116,8 +116,8 @@ export const JUDGE_TEMPLATES = [
     { id: 'judge-listen-guest-wrong', category: '尊敬語', scene: '校歌の披露', sentence: '来賓の方が校歌を伺いました。', answer: false, explanation: '「伺う」は自分側に使う謙譲語です。来賓の方なら「お聞きになりました」です。' }
   ]},
   { id: 'judge-borrow-self', label: '借りる人はだれ？(自分)', variants: [
-    { id: 'judge-borrow-self-correct', category: '謙譲語', scene: '雨の日の傘', sentence: '私は先生の傘を拝借しました。', answer: true, explanation: '自分が借りるので、謙譲語の「拝借する」で正しいです。' },
-    { id: 'judge-borrow-self-wrong', category: '謙譲語', scene: '雨の日の傘', sentence: '私は先生の傘をお貸しになりました。', answer: false, explanation: '「お貸しになる」は相手を高める尊敬語です。自分が借りるときは「拝借しました」を使います。' }
+    { id: 'judge-borrow-self-correct', category: '謙譲語', scene: '雨の日の傘', sentence: '私は先生の傘をお借りしました。', answer: true, explanation: '自分が借りるので、「お〜する」の形の謙譲語「お借りする」で正しいです。' },
+    { id: 'judge-borrow-self-wrong', category: '謙譲語', scene: '雨の日の傘', sentence: '私は先生の傘をお貸しになりました。', answer: false, explanation: '「お貸しになる」は相手を高める尊敬語です。自分が借りるときは「お借りしました」を使います。' }
   ]},
   { id: 'judge-polite', label: '聞き手にていねいに伝える場面', variants: [
     { id: 'judge-polite-library-correct', category: '丁寧語', scene: '先生に予定を伝える場面', sentence: '私は明日、図書室へ行きます。', answer: true, explanation: '「行きます」は聞き手にていねいに伝える丁寧語です。' },
@@ -128,18 +128,28 @@ export const JUDGE_TEMPLATES = [
     { id: 'judge-o-suru-hand-wrong', category: 'お〜する', scene: '先生へ資料を渡す場面', sentence: '私が資料をお渡しになります。', answer: false, explanation: '自分の動作には「お渡しします」のように「お〜する」を使います。' }
   ]},
   { id: 'judge-prefix-suffix', label: 'お・ご・様を使う場面', variants: [
-    { id: 'judge-prefix-suffix-name-correct', category: '接頭語・接尾語', scene: '先生の名前をたずねる場面', sentence: '先生のお名前を教えてください。', answer: true, explanation: '「お名前」の「お」は、ことばをていねいにする接頭語です。' },
+    { id: 'judge-prefix-suffix-name-correct', category: '接頭語・接尾語', scene: '先生の名前をたずねる場面', sentence: '先生のお名前を教えてください。', answer: true, explanation: '「お名前」の「お」は、言葉をていねいにする接頭語です。' },
     { id: 'judge-prefix-suffix-name-wrong', category: '接頭語・接尾語', scene: '先生の名前をたずねる場面', sentence: '先生のご名前を教えてください。', answer: false, explanation: '「名前」には「ご」ではなく、接頭語の「お」をつけて「お名前」と言います。' }
   ]}
 ];
-const JUDGE_EXCLUDED_TEMPLATES = new Set(["judge-wear-guest","judge-visit-self","judge-see-guest2","judge-borrow-self","judge-listen-guest","judge-return","judge-tell-self","judge-meet-self"]);
+
+export const JUDGE_EXCLUDED_TEMPLATES = new Set([
+  "judge-wear-guest",
+  "judge-visit-self",
+  "judge-see-guest2",
+  "judge-borrow-self",
+  "judge-listen-guest",
+  "judge-return",
+  "judge-tell-self",
+  "judge-meet-self"
+]);
+
 export const JUDGE_QUESTION_BANK = JUDGE_TEMPLATES.flatMap(function (template) {
   return template.variants.map(function (question) {
     return Object.assign({}, question, { type: 'true-false', templateId: template.id, templateLabel: template.label });
   });
 });
 
-// 50問を基本セットとして出題。QUESTION_BANKには追加候補も残してあります。
 export const JUDGE_QUESTIONS = JUDGE_QUESTION_BANK.filter(function (question) {
   return !JUDGE_EXCLUDED_TEMPLATES.has(question.templateId);
 });

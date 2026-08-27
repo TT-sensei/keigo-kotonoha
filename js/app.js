@@ -258,7 +258,7 @@ function comboMessage(combo) {
 }
 
 function answerLabel(question) {
-  if (session.mode === 'judge') return question.answer ? '○ 正しい' : '× まちがい';
+  if (session.mode === 'judge') return question.answer ? '正しい' : 'まちがい';
   return question.answer;
 }
 

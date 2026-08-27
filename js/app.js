@@ -51,9 +51,11 @@ const dom = {
   retryWeakButton: document.querySelector('#retry-weak-button')
 };
 
-const screenManager = new ScreenManager({
-  screens: [dom.home, dom.game, dom.guide, dom.result]
-});
+const screenManager = new ScreenManager();
+screenManager.register('home', dom.home);
+screenManager.register('game', dom.game);
+screenManager.register('guide', dom.guide);
+screenManager.register('result', dom.result);
 const storage = new StorageManager('keigo-kotonoha', { eventTarget: document });
 let savedState = loadState();
 let session = null;

@@ -84,8 +84,8 @@ export const JUDGE_TEMPLATES = [
     { id: 'judge-use-guest-wrong', category: '尊敬語', scene: '道具の貸し出し', sentence: 'お客様がその道具をお使いしました。', answer: false, explanation: '「お〜する」は自分側に使う謙譲の形です。お客様なら「お使いになりました」です。' }
   ]},
   { id: 'judge-ask-self', label: 'たずねる人はだれ？(自分)', variants: [
-    { id: 'judge-ask-self-correct', category: '謙譲語', scene: '駅までの道をたずねる', sentence: '私は駅までの道を伺いました。', answer: true, explanation: '自分がたずねるので、謙譲語の「伺う」で正しいです。' },
-    { id: 'judge-ask-self-wrong', category: '謙譲語', scene: '駅までの道をたずねる', sentence: '私は駅までの道をお尋ねになりました。', answer: false, explanation: '「お尋ねになる」は相手を高める尊敬語です。自分には「伺いました」を使います。' }
+    { id: 'judge-ask-self-correct', category: '謙譲語', scene: '職員室へ電話をかける', sentence: '私は職員室に電話して、先生に集合時刻を伺いました。', answer: true, explanation: '先生にたずねる自分の動作なので、謙譲語の「伺う」で正しいです。' },
+    { id: 'judge-ask-self-wrong', category: '謙譲語', scene: '職員室へ電話をかける', sentence: '私は職員室に電話して、先生に集合時刻をお尋ねになりました。', answer: false, explanation: '「お尋ねになる」は相手を高める尊敬語です。自分には「伺いました」を使います。' }
   ]},
   { id: 'judge-show-self', label: '見せる人はだれ？(自分)', variants: [
     { id: 'judge-show-self-correct', category: '謙譲語', scene: '作品を見せる場面', sentence: '私が作品をご覧に入れました。', answer: true, explanation: '自分が見せるので、謙譲語の「ご覧に入れる」で正しいです。' },

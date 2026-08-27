@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173a5d">
+  <title>ことのは ― 敬語のたしなみ ―</title>
+  <link rel="stylesheet" href="https://tt-sensei.github.io/edu-effects/css/edu-effects.css">
+  <link rel="stylesheet" href="https://tt-sensei.github.io/edu-effects/css/edu-learning.css">
+  <link rel="stylesheet" href="https://tt-sensei.github.io/edu-effects/css/edu-feedback.css">
+  <link rel="stylesheet" href="https://tt-sensei.github.io/edu-effects/css/edu-effects-library.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">問題へ移動</a>
+  <main id="main-content" class="app-shell">
+    <section id="home-screen" class="screen home-screen" aria-labelledby="app-title">
+      <div class="home-hero">
+        <div class="home-copy">
+          <p class="eyebrow">ことばをえらぶ。気持ちがとどく。</p>
+          <h1 id="app-title"><span>ことのは</span><small>敬語のたしなみ</small></h1>
+          <p class="home-lead">場面と、だれの動きかを見きわめて、<br>ぴったりの言葉を選ぼう。</p>
+        </div>
+        <img class="home-character" src="https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/groups/group-studying.webp" alt="机を囲んで学習するナビキャラたち" width="420" height="300">
+      </div>
+      <div class="mode-grid" aria-label="学習を選ぶ">
+        <button class="mode-card mode-select" type="button" data-start-mode="select">
+          <span class="mode-icon" aria-hidden="true">あ</span><span class="mode-copy"><strong>敬語セレクト</strong><small>場面に合う言葉を選ぼう</small></span><span class="mode-arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="mode-card mode-judge" type="button" data-start-mode="judge">
+          <span class="mode-icon" aria-hidden="true">○×</span><span class="mode-copy"><strong>敬語ジャッジ</strong><small>この敬語、正しい？ 間違い？</small></span><span class="mode-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+      <div class="home-footer">
+        <p>1セット 10問　·　まちがえた問題は、次回少し出やすくなります。</p>
+        <button class="text-link" type="button" data-show-screen="guide">📖 敬語の手引き</button>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen game-screen" aria-live="polite">
+      <header class="game-header">
+        <button class="icon-button" type="button" data-show-screen="home" aria-label="ホームへ戻る">←</button>
+        <div class="game-meta"><p id="mode-label">敬語セレクト</p><div class="progress-line" aria-label="問題の進み具合"><span id="progress-fill"></span></div></div>
+        <div class="game-status"><strong id="question-count">1 / 10</strong><span id="combo-count">🔥 0 COMBO</span></div>
+      </header>
+      <div class="game-workspace">
+        <div class="question-stage" id="question-stage">
+          <p class="question-kind" id="question-kind">場面に合うことばは？</p>
+          <p class="question-scene" id="question-scene"></p>
+          <h2 id="question-text" class="question-text"></h2>
+          <p id="question-hint" class="question-hint">だれの動作か、たしかめよう。</p>
+        </div>
+        <div id="answer-area" class="answer-area" aria-label="答えを選ぶ"></div>
+        <section id="feedback-panel" class="feedback-panel" hidden aria-labelledby="feedback-title">
+          <div id="feedback-mark" class="feedback-mark" aria-hidden="true"></div>
+          <div class="feedback-copy"><h3 id="feedback-title"></h3><p id="feedback-answer" class="feedback-answer"></p><p id="feedback-explanation"></p></div>
+          <img id="feedback-character" class="feedback-character" src="" alt="" width="104" height="104">
+          <button id="next-button" class="next-button" type="button">次へ <span aria-hidden="true">→</span></button>
+        </section>
+      </div>
+      <button class="guide-chip" type="button" data-show-screen="guide">📖 手引きを見る</button>
+    </section>
+
+    <section id="guide-screen" class="screen guide-screen" aria-labelledby="guide-title">
+      <header class="sub-header">
+        <button class="icon-button" type="button" data-show-screen="home" aria-label="ホームへ戻る">←</button>
+        <div><p class="eyebrow">すぐ見返せる早見表</p><h2 id="guide-title">敬語の手引き</h2></div>
+      </header>
+      <section class="guide-intro">
+        <p class="guide-rule">まずは、<strong>だれの動作か</strong>をたしかめよう。</p>
+        <div class="type-grid">
+          <article class="type-card type-respect"><h3>尊敬語</h3><p>相手や話題の人の動作を高める言い方。</p><small>先生が <b>いらっしゃる</b></small></article>
+          <article class="type-card type-humble"><h3>謙譲語</h3><p>自分側の動作をへりくだって、相手への敬意を表す。</p><small>私が <b>伺う</b></small></article>
+          <article class="type-card type-polite"><h3>丁寧語</h3><p>聞き手にていねいに伝える言い方。</p><small>です・ます・ございます</small></article>
+          <article class="type-card type-beauty"><h3>美化語</h3><p>ものごとを上品にいう言い方。</p><small>お茶・ご飯</small></article>
+        </div>
+      </section>
+      <section class="reference-section" aria-labelledby="reference-title">
+        <div class="section-title-row"><h3 id="reference-title">敬語早見表</h3><p>動作をする人で使い分ける。</p></div>
+        <div class="reference-table-wrap"><table class="reference-table"><thead><tr><th>もとの言葉</th><th>尊敬語</th><th>謙譲語</th></tr></thead><tbody id="reference-body"></tbody></table></div>
+      </section>
+      <section class="pattern-section">
+        <h3>形で表す敬語</h3>
+        <div class="pattern-grid">
+          <article><b>お〜になる</b><span>相手の動作</span><p>お待ちになる</p></article>
+          <article><b>お〜する</b><span>自分側の動作</span><p>お渡しする</p></article>
+          <article><b>お・ご</b><span>ことばを上品に</span><p>お名前・ご案内</p></article>
+          <article><b>〜様・〜先生</b><span>相手の名前などに</span><p>田中様・山田先生</p></article>
+        </div>
+      </section>
+    </section>
+
+    <section id="result-screen" class="screen result-screen" aria-labelledby="result-title">
+      <div class="result-card">
+        <img class="result-character" src="https://raw.githubusercontent.com/TT-sensei/navi-character-/main/assets/web/characters/sora/fullbody/complete.webp" alt="" width="154" height="154">
+        <p class="eyebrow">10問、おつかれさま</p><h2 id="result-title">今回の結果</h2>
+        <div class="result-score"><strong id="result-correct">8</strong><span>/ 10</span></div>
+        <div class="result-meta"><span>最高コンボ <b id="result-combo">6</b></span><span>正答率 <b id="result-accuracy">80%</b></span></div>
+        <div id="category-results" class="category-results"></div>
+        <div class="result-recommendation"><p id="recommendation-text">もう一度、たしかめてみよう。</p><button id="retry-weak-button" class="primary-button" type="button">苦手を中心にもう10問</button><button class="secondary-button" type="button" data-show-screen="home">ホームへ戻る</button></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

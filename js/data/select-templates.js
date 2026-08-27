@@ -120,7 +120,7 @@ export const SELECT_TEMPLATES = [
     { id: 'select-wait-self-entrance', category: '謙譲語', termId: 'do', scene: '来客対応の場面', prompt: '私は玄関でお客様が来るのを（　）。', choices: ['お待ちする', 'お待ちになる', 'いらっしゃる', '召し上がる'], answer: 'お待ちする', explanation: '自分が待つときは、謙譲語の「お待ちする」を使います。' }
   ]},
   { id: 'select-polite', label: '聞き手にていねいに伝える場面', variants: [
-    { id: 'select-polite-library', category: '丁寧語', termId: 'polite', scene: '友だちに予定を伝える場面', prompt: '私は明日、図書室へ（　）。', choices: ['行きます', '行く', '行かれる', '参る'], answer: '行きます', explanation: '聞き手にていねいに伝えるので、「行きます」を使います。' },
+    { id: 'select-polite-library', category: '丁寧語', termId: 'polite', scene: '先生に予定を伝える場面', prompt: '私は明日、図書室へ（　）。', choices: ['行きます', '行く', '行かれる', '参る'], answer: '行きます', explanation: '聞き手にていねいに伝えるので、「行きます」を使います。' },
     { id: 'select-polite-order', category: '丁寧語', termId: 'polite', scene: '発表の順番を伝える場面', prompt: 'こちらが発表の順番（　）。', choices: ['です', 'だ', 'である', 'だった'], answer: 'です', explanation: '「です」は聞き手にていねいに伝える丁寧語です。' }
   ]},
   { id: 'select-o-suru', label: '自分がていねいに動く場面', variants: [

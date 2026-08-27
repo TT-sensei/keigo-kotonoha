@@ -118,9 +118,21 @@ export const SELECT_TEMPLATES = [
   { id: 'select-wait-self', label: '待つ人はだれ？(自分)', variants: [
     { id: 'select-wait-self-lobby', category: '謙譲語', termId: 'do', scene: '受付での対応', prompt: '私はロビーでお客様を（　）。', choices: ['お待ちする', 'お待ちになる', '拝見する', 'いたす'], answer: 'お待ちする', explanation: '自分が待つので、謙譲語の「お待ちする」を使います。' },
     { id: 'select-wait-self-entrance', category: '謙譲語', termId: 'do', scene: '来客対応の場面', prompt: '私は玄関でお客様が来るのを（　）。', choices: ['お待ちする', 'お待ちになる', 'いらっしゃる', '召し上がる'], answer: 'お待ちする', explanation: '自分が待つときは、謙譲語の「お待ちする」を使います。' }
+  ]},
+  { id: 'select-polite', label: '聞き手にていねいに伝える場面', variants: [
+    { id: 'select-polite-library', category: '丁寧語', termId: 'polite', scene: '友だちに予定を伝える場面', prompt: '私は明日、図書室へ（　）。', choices: ['行きます', '行く', '行かれる', '参る'], answer: '行きます', explanation: '聞き手にていねいに伝えるので、「行きます」を使います。' },
+    { id: 'select-polite-order', category: '丁寧語', termId: 'polite', scene: '発表の順番を伝える場面', prompt: 'こちらが発表の順番（　）。', choices: ['です', 'だ', 'である', 'だった'], answer: 'です', explanation: '「です」は聞き手にていねいに伝える丁寧語です。' }
+  ]},
+  { id: 'select-o-suru', label: '自分がていねいに動く場面', variants: [
+    { id: 'select-o-suru-hand', category: 'お〜する', termId: 'do', scene: '先生へ資料を渡す場面', prompt: '私が資料を（　）。', choices: ['お渡しする', 'お渡しになる', 'おっしゃる', 'ご覧になる'], answer: 'お渡しする', explanation: '自分が渡すので、「お〜する」の形で「お渡しする」と言います。' },
+    { id: 'select-o-suru-guide', category: 'お〜する', termId: 'do', scene: '来客を案内する場面', prompt: '私が校長室まで（　）。', choices: ['ご案内する', 'ご案内になる', 'いらっしゃる', '召し上がる'], answer: 'ご案内する', explanation: '自分が案内するので、「ご〜する」の形を使います。' }
+  ]},
+  { id: 'select-prefix-suffix', label: 'お・ご・様を使う場面', variants: [
+    { id: 'select-prefix-suffix-name', category: '接頭語・接尾語', termId: 'prefix-suffix', scene: '先生の名前をたずねる場面', prompt: '先生の（　）を教えてください。', choices: ['お名前', 'ご名前', '名前お', 'み名前'], answer: 'お名前', explanation: '「お名前」の「お」は、ことばをていねいにする接頭語です。' },
+    { id: 'select-prefix-suffix-sama', category: '接頭語・接尾語', termId: 'prefix-suffix', scene: '手紙のあて名を書く場面', prompt: '山田（　）にお手紙を出します。', choices: ['様', 'さん', 'くん', 'さま方'], answer: '様', explanation: '名前の後ろに「様」をつけると、相手を敬う接尾語になります。' }
   ]}
 ];
-const SELECT_EXCLUDED_TEMPLATES = new Set(["select-wear-guest","select-visit-office","select-see-guest2","select-borrow-self","select-wait-self"]);
+const SELECT_EXCLUDED_TEMPLATES = new Set(["select-wear-guest","select-visit-office","select-see-guest2","select-borrow-self","select-wait-self","select-listen-guest","select-return","select-tell-self"]);
 export const SELECT_QUESTION_BANK = SELECT_TEMPLATES.flatMap(function (template) {
   return template.variants.map(function (question) {
     return Object.assign({}, question, { type: 'choice', templateId: template.id, templateLabel: template.label });
@@ -131,4 +143,3 @@ export const SELECT_QUESTION_BANK = SELECT_TEMPLATES.flatMap(function (template)
 export const SELECT_QUESTIONS = SELECT_QUESTION_BANK.filter(function (question) {
   return !SELECT_EXCLUDED_TEMPLATES.has(question.templateId);
 });
-

@@ -118,9 +118,21 @@ export const JUDGE_TEMPLATES = [
   { id: 'judge-borrow-self', label: '借りる人はだれ？(自分)', variants: [
     { id: 'judge-borrow-self-correct', category: '謙譲語', scene: '雨の日の傘', sentence: '私は先生の傘を拝借しました。', answer: true, explanation: '自分が借りるので、謙譲語の「拝借する」で正しいです。' },
     { id: 'judge-borrow-self-wrong', category: '謙譲語', scene: '雨の日の傘', sentence: '私は先生の傘をお貸しになりました。', answer: false, explanation: '「お貸しになる」は相手を高める尊敬語です。自分が借りるときは「拝借しました」を使います。' }
+  ]},
+  { id: 'judge-polite', label: '聞き手にていねいに伝える場面', variants: [
+    { id: 'judge-polite-library-correct', category: '丁寧語', scene: '友だちに予定を伝える場面', sentence: '私は明日、図書室へ行きます。', answer: true, explanation: '「行きます」は聞き手にていねいに伝える丁寧語です。' },
+    { id: 'judge-polite-library-wrong', category: '丁寧語', scene: '友だちに予定を伝える場面', sentence: '私は明日、図書室へ行く。', answer: false, explanation: 'この場面では、丁寧語の「行きます」と言うと、聞き手にていねいです。' }
+  ]},
+  { id: 'judge-o-suru', label: '自分がていねいに動く場面', variants: [
+    { id: 'judge-o-suru-hand-correct', category: 'お〜する', scene: '先生へ資料を渡す場面', sentence: '私が資料をお渡しします。', answer: true, explanation: '自分が渡すので、「お〜する」の形で正しくへりくだっています。' },
+    { id: 'judge-o-suru-hand-wrong', category: 'お〜する', scene: '先生へ資料を渡す場面', sentence: '私が資料をお渡しになります。', answer: false, explanation: '自分の動作には「お渡しします」のように「お〜する」を使います。' }
+  ]},
+  { id: 'judge-prefix-suffix', label: 'お・ご・様を使う場面', variants: [
+    { id: 'judge-prefix-suffix-name-correct', category: '接頭語・接尾語', scene: '先生の名前をたずねる場面', sentence: '先生のお名前を教えてください。', answer: true, explanation: '「お名前」の「お」は、ことばをていねいにする接頭語です。' },
+    { id: 'judge-prefix-suffix-name-wrong', category: '接頭語・接尾語', scene: '先生の名前をたずねる場面', sentence: '先生のご名前を教えてください。', answer: false, explanation: '「名前」には「ご」ではなく、接頭語の「お」をつけて「お名前」と言います。' }
   ]}
 ];
-const JUDGE_EXCLUDED_TEMPLATES = new Set(["judge-wear-guest","judge-visit-self","judge-see-guest2","judge-borrow-self","judge-listen-guest"]);
+const JUDGE_EXCLUDED_TEMPLATES = new Set(["judge-wear-guest","judge-visit-self","judge-see-guest2","judge-borrow-self","judge-listen-guest","judge-return","judge-tell-self","judge-meet-self"]);
 export const JUDGE_QUESTION_BANK = JUDGE_TEMPLATES.flatMap(function (template) {
   return template.variants.map(function (question) {
     return Object.assign({}, question, { type: 'true-false', templateId: template.id, templateLabel: template.label });
@@ -131,4 +143,3 @@ export const JUDGE_QUESTION_BANK = JUDGE_TEMPLATES.flatMap(function (template) {
 export const JUDGE_QUESTIONS = JUDGE_QUESTION_BANK.filter(function (question) {
   return !JUDGE_EXCLUDED_TEMPLATES.has(question.templateId);
 });
-

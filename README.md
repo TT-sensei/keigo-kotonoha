@@ -7,14 +7,14 @@
 - 敬語セレクト：場面と動作をする人に合う敬語を4択で選ぶ。
 - 敬語ジャッジ：文中の敬語が正しければ○、違っていれば×を選ぶ。
 
-各モードに50問の基本問題を用意し、10問1セットで出題します。不正解だった問題は、次回以降に少し選ばれやすくなります。進み具合はブラウザの localStorage に保存されます。
+各モードの問題は、33のテンプレートに2問ずつ、全部で66問を用意しています。そのうち8テンプレート（16問）は予備として出題から外してあり、実際に使うのは各モード50問です。10問1セットで出題します。不正解だった問題は、次回以降に少し選ばれやすくなります。進み具合はブラウザの localStorage に保存されます。
 
 ## 問題を増やす場所
 
 | モード | 追加先 | 追加する場所 |
 | --- | --- | --- |
-| 敬語セレクト | js/data/select-templates.js | 場面テンプレートの variants（基本50問。QUESTION_BANKに追加候補あり） |
-| 敬語ジャッジ | js/data/judge-templates.js | 見分けポイントの variants（基本50問。QUESTION_BANKに追加候補あり） |
+| 敬語セレクト | js/data/select-templates.js | 場面テンプレートの variants（全66問。出題は50問、予備16問は SELECT_EXCLUDED_TEMPLATES で除外中） |
+| 敬語ジャッジ | js/data/judge-templates.js | 見分けポイントの variants（全66問。出題は50問、予備16問は JUDGE_EXCLUDED_TEMPLATES で除外中） |
 | 早見表 | js/data/keigo-base.js | KEIGO_TERMS |
 
 問題には、重複しない id、category、scene、explanation を付けます。解説は1〜2文で、敬語がだれの動作に使われるかが分かる内容にします。
